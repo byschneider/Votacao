@@ -84,19 +84,20 @@
                 return Votacao.MessageBox.Aviso("Favor informar o ID do usuário.");
             }
 
-            //Votacao.Aguarde.Exibir();
+            Votacao.Aguarde.Exibir();
 
             var posting = $.post("/Home/Votar", { IdUsuario: $(".idUsuario").val(), CdRestaurante: voto.attr("id") });
 
             posting.done(function (data) {
                 if (data.Sucesso) {
-                    alert("Ok");
-                    $(location).attr("href", "/Home");
-                    //Votacao.Aguarde.Fechar();
+                    Votacao.Aguarde.Fechar();
+                    Votacao.MessageBox.Aviso("Voto efetuado com sucesso.", undefined, function () {
+                        Votacao.Aguarde.Exibir();
+                        $(location).attr("href", "/Home");
+                    });
                 } else {
-                    alert(data.Mensagem);
-                    //Votacao.Aguarde.Fechar();
-                    //Votacao.MessageBox.Aviso(data.Mensagem);
+                    Votacao.Aguarde.Fechar();
+                    Votacao.MessageBox.Aviso(data.Mensagem);
                 }
             });
         });

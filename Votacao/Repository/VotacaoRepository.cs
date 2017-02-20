@@ -14,7 +14,7 @@ namespace Votacao.Repository
     {
         // data que define a data atual do sistema.
         // para testar outros dias da semana só mudar o valor na soma abaixo
-        private DateTime dataAtual = DateTime.Now.AddDays(1);
+        private DateTime dataAtual = DateTime.Now.AddDays(0);
 
         public DateTime GetDataMongo(DateTime data)
         {

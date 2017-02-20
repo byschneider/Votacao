@@ -11,10 +11,10 @@ namespace Votacao.Models
     {
         public IMongoCollection<BsonDocument> GetCollection(string nmCollection)
         {
-            String uri = "mongodb://votacao:dbserver@ds056979.mlab.com:56979/dbserver";
+            String uri = "mongodb://votacao_user:votacao_senha@ds157529.mlab.com:57529/votacao";
 
             var client = new MongoClient(uri);
-            var db = client.GetDatabase("dbserver");
+            var db = client.GetDatabase("votacao");
             var collection = db.GetCollection<BsonDocument>(nmCollection);
             
             return collection;
