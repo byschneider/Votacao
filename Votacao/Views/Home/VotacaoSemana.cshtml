@@ -1,0 +1,106 @@
+﻿@model Votacao.ViewModel.VotacaoSemanaVM
+<style>
+    .progress-label {
+        float: left;
+        margin-right: 1em;
+    }
+</style>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Segunda-Feira</h2>
+        <div class="alert" style="padding: 0px;">
+            <div class="container" style="padding: 0px;">
+                @foreach (var item in Model.LsSegunda)
+                {
+                    <p>
+                        <h6 class="progress-label col-sm-3" style="padding-left: 0px;">@item.NmRestaurante</h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@item.PeVotos" aria-valuemin="0" aria-valuemax="100" style="width: @item.PeVotos%">
+                                @item.NrVotos
+                            </div>
+                        </div>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h2>Terça-Feira</h2>
+        <div class="alert" style="padding: 0px;">
+            <div class="container" style="padding: 0px;">
+                @foreach (var item in Model.LsTerca)
+                {
+                    <p>
+                        <h6 class="progress-label col-sm-3" style="padding-left: 0px;">@item.NmRestaurante</h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@item.PeVotos" aria-valuemin="0" aria-valuemax="100" style="width: @item.PeVotos%">
+                                @item.NrVotos
+                            </div>
+                        </div>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h2>Quarta-Feira</h2>
+        <div class="alert" style="padding: 0px;">
+            <div class="container" style="padding: 0px;">
+                @foreach (var item in Model.LsQuarta)
+                {
+                    <p>
+                        <h6 class="progress-label col-sm-3" style="padding-left: 0px;">@item.NmRestaurante</h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@item.PeVotos" aria-valuemin="0" aria-valuemax="100" style="width: @item.PeVotos%">
+                                @item.NrVotos
+                            </div>
+                        </div>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Quinta-Feira</h2>
+        <div class="alert" style="padding: 0px;">
+            <div class="container" style="padding: 0px;">
+                @foreach (var item in Model.LsQuinta)
+                {
+                    <p>
+                        <h6 class="progress-label col-sm-3" style="padding-left: 0px;">@item.NmRestaurante</h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@item.PeVotos" aria-valuemin="0" aria-valuemax="100" style="width: @item.PeVotos%">
+                                @item.NrVotos
+                            </div>
+                        </div>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h2>Sexta-Feira</h2>
+        <div class="alert" style="padding: 0px;">
+            <div class="container" style="padding: 0px;">
+                @foreach (var item in Model.LsSexta)
+                {
+                    <p>
+                        <h6 class="progress-label col-sm-3" style="padding-left: 0px;">@item.NmRestaurante</h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@item.PeVotos" aria-valuemin="0" aria-valuemax="100" style="width: @item.PeVotos%">
+                                @item.NrVotos
+                            </div>
+                        </div>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+    $(function () {
+
+    });
+    </script>

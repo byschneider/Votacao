@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Votacao", "Votacao\Votacao.csproj", "{87170BBF-FF6A-4D8E-B410-84C1FA25FBF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Votacao.Tests", "Votacao.Tests\Votacao.Tests.csproj", "{3F13D47E-1311-4966-B165-18FBAF2918AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87170BBF-FF6A-4D8E-B410-84C1FA25FBF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87170BBF-FF6A-4D8E-B410-84C1FA25FBF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87170BBF-FF6A-4D8E-B410-84C1FA25FBF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87170BBF-FF6A-4D8E-B410-84C1FA25FBF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F13D47E-1311-4966-B165-18FBAF2918AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F13D47E-1311-4966-B165-18FBAF2918AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F13D47E-1311-4966-B165-18FBAF2918AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F13D47E-1311-4966-B165-18FBAF2918AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
