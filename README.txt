@@ -21,13 +21,11 @@
 - É um sistema web MVC feito em .Net utilizando javascript, jQuery, bootstrap e o banco de dados não relacional MongoDB.
 - Possui um único Controller com 3 métodos:
     - Index: direciona para a view inicial com a votação aberta do dia e parcial da votação do dia;
-    - Votar: recebe Request com Id do usuário e código do restaurante selecionado. Esse método valida se o usuário já votou no dia, 
-             caso não tenha votado insere o voto no banco de dados. Caso já tenha votado retorna uma mensagem para a view;
+    - Votar: recebe Request com Id do usuário e código do restaurante selecionado. Esse método valida se o usuário já votou no dia, caso não tenha votado insere o voto no banco de dados. Caso já tenha votado retorna uma mensagem para a view;
     - VotacaoSemana: direciona para a view com os resultados da semana
 - No repositório VotacaoRepository ficam os métodos de acesso ao banco onde são feitas as consultas e inserção dos votos
 
 # O que pode ser melhorado
 - Inclusão de validação do usuário com Id e senha;
 - Incluir um cadastro de restaurantes, ou melhor, configuração o nome da votação para poder votar em outras coisas e não só restaurantes;
-- A atualização da votação parcial após o registro de um voto deveria ser feita com um retorno via Json ou PartialView, mas por falta de
-  tempo estou atualizando toda a tela.
+- A atualização da votação parcial após o registro de um voto deveria ser feita com um retorno via Json ou PartialView, mas por falta de tempo estou atualizando toda a tela.
