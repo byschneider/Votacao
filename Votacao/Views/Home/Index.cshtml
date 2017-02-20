@@ -15,47 +15,53 @@
     }
 </style>
 <div class="row">
-    <div class="col-md-4">
-        <h2>Votação do Dia</h2>
-        <div class="list-group list-votacao">
-            @foreach (var item in lstRestaurantes)
-            {
-                <a href="#" class="list-group-item @(item.FlDesabilitado ? "disabled" : "")" id="@item.CdRestaurante">@item.NmRestaurante</a>
-            }
+    @if (lstRestaurantes.Count == 0)
+    {
+        <div class="col-md-12">
+            <h2>Não há votação hoje!</h2>
         </div>
-        <div class="form-horizontal">
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Usuário</label>
-                <div class="col-sm-7">
-                    <input type="text" class="form-control idUsuario">
-                </div>
-                <div class="col-sm-3">
-                    <button type="submit" class="form-control btn btn-primary btnVotar">Votar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-8">
-        <h2>Parcial</h2>
-        <div class="alert ">
-            <div class="container">
-                @foreach (var item in lstVotacao)
+    }
+    else
+    {
+        <div class="col-md-4">
+            <h2>Votação do Dia</h2>
+            <div class="list-group list-votacao">
+                @foreach (var item in lstRestaurantes)
                 {
-                <p>
-                    <h4 class="progress-label col-sm-2">@item.NmRestaurante</h4>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@item.PeVotos" aria-valuemin="0" aria-valuemax="100" style="width: @item.PeVotos%">
-                            @item.NrVotos
-                        </div>
-                    </div>
-                </p>
+                    <a href="#" class="list-group-item @(item.FlDesabilitado ? "disabled" : "")" id="@item.CdRestaurante">@item.NmRestaurante</a>
                 }
             </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Usuário</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control idUsuario">
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="submit" class="form-control btn btn-primary btnVotar">Votar</button>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
-
-    </div>
+        <div class="col-md-8">
+            <h2>Parcial</h2>
+            <div class="alert ">
+                <div class="container">
+                    @foreach (var item in lstVotacao)
+                    {
+                    <p>
+                        <h4 class="progress-label col-sm-2">@item.NmRestaurante</h4>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@item.PeVotos" aria-valuemin="0" aria-valuemax="100" style="width: @item.PeVotos%">
+                                @item.NrVotos
+                            </div>
+                        </div>
+                    </p>
+                    }
+                </div>
+            </div>
+        </div>
+    }
 </div>
 <script>
     $(function () {

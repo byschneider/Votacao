@@ -14,7 +14,7 @@ namespace Votacao.Repository
     {
         // data que define a data atual do sistema.
         // para testar outros dias da semana só mudar o valor na soma abaixo
-        private DateTime dataAtual = DateTime.Now.AddDays(3);
+        private DateTime dataAtual = DateTime.Now.AddDays(1);
 
         public DateTime GetDataMongo(DateTime data)
         {
@@ -108,8 +108,13 @@ namespace Votacao.Repository
                                               { "count", new BsonDocument("$sum", "$Voto") }
                                           })
                                           .SortByDescending(x => x["count"]);
+
                 var results = aggregate.FirstOrDefault();
-                retorno.Add(results["_id"].AsInt32);
+
+                if (results != null)
+                {
+                    retorno.Add(results["_id"].AsInt32);
+                }
             }
 
             return retorno;
@@ -117,10 +122,15 @@ namespace Votacao.Repository
 
         public List<VotacaoVM> GetRestaurantes(bool removerVencedores = true)
         {
-            var collection = GetCollection("restaurantes");
-
-            var result = collection.Find(_ => true).ToList();
             var retorno = new List<VotacaoVM>();
+
+            if ((int) dataAtual.DayOfWeek == 0 || (int) dataAtual.DayOfWeek == 6)
+            {
+                return retorno;
+            } 
+
+            var collection = GetCollection("restaurantes");
+            var result = collection.Find(_ => true).ToList();
 
             foreach (var item in result)
             {
@@ -156,19 +166,12 @@ namespace Votacao.Repository
 
         public void AddVoto(VotacaoVM model)
         {
-            //var lstRestaurates = this.GetRestaurantes();
-            //BsonDocument[] documentos = { };
-
-            //foreach (var restaurante in lstRestaurates)
-            //{
-                var novo = new BsonDocument {
-                    { "IdUsuario" , model.IdUsuario },
-                    { "CdRestaurante" , model.CdRestaurante },
-                    { "Data", GetDataMongo(dataAtual) },
-                    { "Voto", 1 }
-                };
-            //    documentos[documentos.Length] = novo;
-            //}
+            var novo = new BsonDocument {
+                { "IdUsuario" , model.IdUsuario },
+                { "CdRestaurante" , model.CdRestaurante },
+                { "Data", GetDataMongo(dataAtual) },
+                { "Voto", 1 }
+            };
 
             var collection = GetCollection("votacao");
 
