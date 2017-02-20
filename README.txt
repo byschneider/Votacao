@@ -9,8 +9,7 @@
     - após votar, o mesmo usuário não poderá votar no mesmo dia (controlado pelo Id do usuário);
     - o restaurante que vencer em um dia será excluído das votações dos outros dias da semana;
     - no menu "Resultados da Semana" são exibidos os resultados das votações da semana atual;
-    - detalhe importante: para testar dias de votação diferentes do dia atual deve-se o valor da variável dataAtual no VotacaoRepository
-                          mudando o valor do parâmetro da função AddDays para mais ou menos.
+    - detalhe importante: para testar dias de votação diferentes do dia atual deve-se o valor da variável dataAtual no VotacaoRepository mudando o valor do parâmetro da função AddDays para mais ou menos.
 
 # Requisitos
 - Visual Studio 2015 Community ou superior
